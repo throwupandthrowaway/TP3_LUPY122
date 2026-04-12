@@ -11,7 +11,7 @@ x=np.empty(N_MAX) #Coordonnées du cercle
 y=np.empty(N_MAX)
 
 @njit
-def coord(L,R): #Coordonnée aléatoire qui balaie l'espace proche de R
+def coord(L,R): #Coordonnée aléatoire
     return R+np.random.rand()*(L-2*R)
 
 @njit
