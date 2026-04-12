@@ -1,6 +1,6 @@
 import numpy as np
-# import numba
-# from numba import njit
+import numba
+from numba import njit
 
 L=20.
 R=0.4
@@ -10,11 +10,11 @@ n=0 #Nombre de cercles ajoutés
 x=np.empty(N_MAX) #Coordonnées du cercle
 y=np.empty(N_MAX)
 
-#@njit
+@njit
 def coord(L,R): #Coordonnée aléatoire qui balaie l'espace proche de R
     return R+np.random.rand()*(L-2*R)
 
-#@njit
+@njit
 def place_libre(n,x,y,x_new,y_new):
     if n==0:
         return 1
@@ -28,7 +28,7 @@ def place_libre(n,x,y,x_new,y_new):
                 break
         return 1
 
-#@njit
+@njit
 def remplissage(L,R,MAX_TRIES):
     #Tirage aléatoire de coordonnées à ajouter
     n=0
@@ -50,3 +50,6 @@ def remplissage(L,R,MAX_TRIES):
 x,y,n=remplissage(L,R,MAX_TRIES)
 for i in range(n):
     print(x[i],"",y[i])
+print("Particules adsorbées: "+str(n))
+frac=(n*np.pi*R**2/L**2)*100
+print("Portion de surface avec adsorption: "+str(frac)+"%")
