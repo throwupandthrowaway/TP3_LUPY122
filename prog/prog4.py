@@ -1,5 +1,6 @@
 import numpy as np
 from prog1 import coord, place_libre
+from numba import njit
 
 L=20.
 R=0.4
@@ -7,11 +8,13 @@ MAX_TRIES=10000
 r_surf=0.05
 U=10.0
 
+@njit
 def dist_latt(x_new,y_new):
     x_near=np.rint(x_new)   #Atome le plus proche = arrondi à l'entier le plus proche
     y_near=np.rint(y_new)
     return np.sqrt((x_new-x_near)**2+(y_new-y_near)**2)
 
+@njit
 def remplissage(L,R,MAX_TRIES,T):
     N_MAX=int(L**2/(np.pi*R**2))
     x=np.empty(N_MAX)
