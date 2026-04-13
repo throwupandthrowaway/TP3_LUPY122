@@ -30,7 +30,8 @@ def place_libre(n,x,y,x_new,y_new):
 
 @njit
 def remplissage(L,R,MAX_TRIES):
-    #Tirage aléatoire de coordonnées à ajouter
+    x=np.empty(N_MAX)
+    y=np.empty(N_MAX)
     n=0
     echecs=0
     while echecs<MAX_TRIES:
