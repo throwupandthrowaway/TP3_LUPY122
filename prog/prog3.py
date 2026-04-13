@@ -19,5 +19,5 @@ k=np.pi*R**2/(L**2) #Facteur d'échelle
 
 mean_S=k*mean   #Moyenne de la fraction de surface
 sd_S=k*sd   #Ecart-type de la fraction de surface
-print("Moyenne de la fraction de surface avec particules adsorbées: "+str(mean_S*100)+"%")
-print("Ecart-type de la fraction de surface avec particules adsorbées: "+str(sd_S*100)+"%")
+print("Moyenne du nombre de particules adsorbées: "+str(mean)+"+-"+str(sd))
+print("Moyenne de la fraction de surface avec particules adsorbées: "+str(mean_S*100)+"+-"+str(sd_S*100)+"%")
