@@ -21,8 +21,9 @@ for j in range(len(T)):
         _,_,n=remplissage(L,R,MAX_TRIES,T[j])
         resultats[i]=n
     mean_S[j]=np.mean(resultats)*k
-
+    
 plt.plot(T,mean_S,'o-')
+plt.grid()
 plt.xlabel('T')
 plt.ylabel('Portion de surface moyenne')
 plt.title('Portion de surface adsorbée en fonction de T')
