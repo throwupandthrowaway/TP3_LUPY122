@@ -13,8 +13,8 @@ n=0
 M=100
 T=np.arange(0,10.5,0.5)
 k=np.pi*R**2/(L**2) #Facteur d'échelle
-mean_S=np.empty(M)
-sd_S=np.empty(M)
+mean_S=np.empty(len(T))
+sd_S=np.empty(len(T))
 
 for j in range(len(T)):
     resultats=np.empty(M)
