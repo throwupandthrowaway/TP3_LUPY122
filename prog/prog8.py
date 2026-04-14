@@ -1,6 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from prog1 import remplissage
+import time as time
+
+start_time=time.time()
 
 L=20.
 R=0.4
@@ -20,7 +23,13 @@ for j,MAX_TRIES in enumerate(max_tries_list):
     sd_S[j]=np.std(resultats)*k
 
 plt.errorbar(max_tries_list,mean_S,yerr=sd_S,fmt='o-')
+plt.title("Fraction de surface occupée en fonction du nombre d'essais maximum")
+plt.grid()
 plt.xscale('log')
 plt.xlabel('MAX_TRIES')
 plt.ylabel('Portion de surface moyenne')
+plt.savefig("graph11.pdf")
 plt.show()
+
+ex_time=time.time()-start_time
+print("Execution time: "+str("{:.2f}".format(ex_time))+"s")
