@@ -43,6 +43,7 @@ plt.title(str(n)+" particules de gaz"
           +"\n"+"Surface remplie: "+str("{:.2f}".format((n*np.pi*R**2/L**2)*100))+"%"
           +"\n"+"T=1")
 
+
 x,y,n=remplissage(L,R,MAX_TRIES,T[2])
 circles=[plt.Circle((xi,yi),radius=R,linewidth=0,color="b") for xi,yi in zip(x,y)]
 c=matplotlib.collections.PatchCollection(circles)
@@ -87,7 +88,7 @@ plt.title(str(n)+" particules de gaz"
 
 plt.tight_layout()
 plt.subplots_adjust(wspace=1)
-plt.savefig("graph05.pdf",bbox_inches="tight")
+plt.savefig("graph07.pdf",bbox_inches="tight")
 plt.show()
 
 ex_time=time.time()-start_time
