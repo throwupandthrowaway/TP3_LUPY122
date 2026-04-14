@@ -14,7 +14,6 @@ M=100
 T=np.arange(0,10.5,0.5)
 k=np.pi*R**2/(L**2) #Facteur d'échelle
 mean_S=np.empty(len(T))
-sd_S=np.empty(len(T))
 
 for j in range(len(T)):
     resultats=np.empty(M)
@@ -22,7 +21,6 @@ for j in range(len(T)):
         _,_,n=remplissage(L,R,MAX_TRIES,T[j])
         resultats[i]=n
     mean_S[j]=np.mean(resultats)*k
-    sd_S[j]=np.std(resultats)*k
 
 plt.plot(T,mean_S,'o-')
 plt.xlabel('T')
